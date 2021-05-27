@@ -27,12 +27,11 @@ namespace ReportBarang009
 
         private void MasterBarang_018_Load(object sender, EventArgs e)
         {
-            on.Open();
+            con.Open();
             SqlDataAdapter sda = new SqlDataAdapter("select isnull(max (cast (ID as int)),0) +1 from tbl_barang", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             txtID.Text = dt.Rows[0][0].ToString();
-            LoadData();
-        }
+                }
     }
 }
